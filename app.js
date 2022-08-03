@@ -1,105 +1,133 @@
-var ID=999;
+var id=999;
 function getEmpId () {
-    return ID++;
+    return id++;
 };
 
-function CalcuSalary(lev){
+function calcuSalary(level){
     let salary;
     
-    if (lev === "Senior") {
+    if (level === "Senior") {
         salary = Math.floor(Math.random()*(2000-1500)+1500);
         
     }
-    else if (lev === "Mid-Senior") {
+    else if (level === "Mid-Senior") {
         salary = Math.floor(Math.random()*(1500-1000)+1000);
     }
-    else if (lev === "Junior") {
+    else if (level === "Junior") {
         salary = Math.floor(Math.random()*(1000-500)+500);
     }
     return salary;
 };
 
-function NetSalary(salary) {
-    salary = salary - (salary * 0.075)
-}
+
+
+
 
 var Emp1 = {
     employeeID : getEmpId(),
-    FullName : "Ghazi Samer",
-    Department : "Administration",
+    fullName : "Ghazi Samer",
+    department : "Administration",
     level : "Senior",
     imageURL : "",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
+
 };
 
 var Emp2 = {
     employeeID : getEmpId(),
-    FullName : "Lana Ali",
-    Department : "Finance",
+    fullName : "Lana Ali",
+    department : "Finance",
     level : "Senior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
 var Emp3 = {
     employeeID : getEmpId(),
-    FullName : "Tamara Ayoub",
-    Department : "Marketing",
+    fullName : "Tamara Ayoub",
+    department : "Marketing",
     level : "Senior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
 var Emp4 = {
     employeeID : getEmpId(),
-    FullName : "Safi Walid",
-    Department : "Administration",
+    fullName : "Safi Walid",
+    department : "Administration",
     level : "Mid-Senior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
 var Emp5 = {
     employeeID : getEmpId(),
-    FullName : "Omar Zaid",
-    Department : "Development",
+    fullName : "Omar Zaid",
+    department : "Development",
     level : "Senior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
 var Emp5 = {
     employeeID : getEmpId(),
-    FullName : "Rana Saleh",
-    Department : "Development",
+    fullName : "Rana Saleh",
+    department : "Development",
     level : "Junior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
 var Emp6 = {
     employeeID : getEmpId(),
-    FullName : "Hadi Ahmad",
-    Department : "Finance",
+    fullName : "Hadi Ahmad",
+    department : "Finance",
     level : "Mid-Senior",
     imageURL : "imageURL",
-    Salary : CalcuSalary(),
+    salary : calcuSalary(),
+    netSalary : function () {
+        return salary = this.salary - (this.salary * 0.075)
+    }
 };
 
-console.log("Employee name: " + Emp1.FullName)
-console.log("Employee salary: " + (Emp1.Salary = CalcuSalary(Emp1.level)))
+Emp1.salary = calcuSalary(Emp1.level);
+console.log("Employee name: " + Emp1.fullName)
+console.log("Employee salary: " + Emp1.salary)
 console.log("______________")
-console.log("Employee name: " + Emp2.FullName)
-console.log("Employee salary: " + (Emp2.Salary = CalcuSalary(Emp2.level)))
+Emp1.salary = calcuSalary(Emp2.level);
+console.log("Employee name: " + Emp2.fullName)
+console.log("Employee salary: " + (Emp2.salary = calcuSalary(Emp2.level)))
 console.log("______________")
-console.log("Employee name: " + Emp3.FullName)
-console.log("Employee salary: " + (Emp3.Salary = CalcuSalary(Emp3.level)))
+Emp1.salary = calcuSalary(Emp3.level);
+console.log("Employee name: " + Emp3.fullName)
+console.log("Employee salary: " + (Emp3.salary = calcuSalary(Emp3.level)))
 console.log("______________")
-console.log("Employee name: " + Emp4.FullName)
-console.log("Employee salary: " + (Emp4.Salary = CalcuSalary(Emp4.level)))
+Emp1.salary = calcuSalary(Emp4.level);
+console.log("Employee name: " + Emp4.fullName)
+console.log("Employee salary: " + (Emp4.salary = calcuSalary(Emp4.level)))
 console.log("______________")
-console.log("Employee name: " + Emp5.FullName)
-console.log("Employee salary: " + (Emp5.Salary = CalcuSalary(Emp5.level)))
+Emp1.salary = calcuSalary(Emp5.level);
+console.log("Employee name: " + Emp5.fullName)
+console.log("Employee salary: " + (Emp5.salary = calcuSalary(Emp5.level)))
 console.log("______________")
-console.log("Employee name: " + Emp6.FullName)
-console.log("Employee salary: " + (Emp6.Salary = CalcuSalary(Emp6.level)))
+Emp1.salary = calcuSalary(Emp6.level);
+console.log("Employee name: " + Emp6.fullName)
+console.log("Employee salary: " + (Emp6.salary = calcuSalary(Emp6.level)))
