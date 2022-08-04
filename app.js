@@ -1,133 +1,62 @@
-var id=999;
-function getEmpId () {
-    return id++;
+' use strict';
+var id = 1000;
+
+var employeeList = [];
+function employee (emplyeeName, employeeDepartment, employeelevel, employeeImage){
+    this.employeeid = function() {
+        return id++;
+    };
+    this.fullName = emplyeeName;
+    this.department = employeeDepartment;
+    this.level = employeelevel;
+    this.imageURL = employeeImage;
+    this.salary = function () {
+        let salary;
+
+        if (this.level === "Senior"){
+            salary = Math.floor(Math.random()*(2000-1500)+1500);
+        }
+        else if (this.level === "Mid-Senior") {
+            salary = Math.floor(Math.random()*(1500-1000)+1000);
+        }
+        else if (this.level === "Junior") {
+            salary = Math.floor(Math.random()*(1000-500)+500);
+        }
+        return salary;
+    };
+    employeeList.push(this);
 };
 
-function calcuSalary(level){
-    let salary;
+employee.prototype.netSalary = function(){
+    return this.salary() - (this.salary() * 0.075)
+}
+
+employee.prototype.printInfo = function(){
+    document.write(`<h5>Employee name: ${this.fullName} </h5><br>
+    <h5>Department: ${this.department}</h5><br>
+    <h5>Employee salary: ${this.salary()}</h5><br>
+    ___________________________<br>`)
     
-    if (level === "Senior") {
-        salary = Math.floor(Math.random()*(2000-1500)+1500);
-        
-    }
-    else if (level === "Mid-Senior") {
-        salary = Math.floor(Math.random()*(1500-1000)+1000);
-    }
-    else if (level === "Junior") {
-        salary = Math.floor(Math.random()*(1000-500)+500);
-    }
-    return salary;
-};
+}
 
+const emp1 = new employee("Ghazi Samer", "Administration","Senior",'./img/images (5).png')
+// console.log(emp1.employeeid())
+// console.log(emp1.salary())
+// console.log(emp1.netSalary())
+const emp2 = new employee("Lana Ali", "Finance", "Senior","imageURL")
+// console.log(emp2.employeeid())
+// console.log(emp2.salary())
+const emp3 = new employee("Tamara Ayoub", "Marketing", "Senior","imageURL")
+const emp4 = new employee("Safi Walid", "Administration", "Mid-Senior","imageURL")
+const emp5 = new employee("Omar Zaid", "Development", "Senior","imageURL")
+const emp6 = new employee("Rana Saleh", "Development", "Junior","imageURL")
+const emp7 = new employee("Hadi Ahmad", "Finance", "Mid-Senior","imageURL")
 
+emp1.printInfo()
+emp2.printInfo()
+emp3.printInfo()
+emp4.printInfo()
+emp5.printInfo()
+emp6.printInfo()
+emp7.printInfo()
 
-
-
-var Emp1 = {
-    employeeID : getEmpId(),
-    fullName : "Ghazi Samer",
-    department : "Administration",
-    level : "Senior",
-    imageURL : "",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-
-};
-
-var Emp2 = {
-    employeeID : getEmpId(),
-    fullName : "Lana Ali",
-    department : "Finance",
-    level : "Senior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-var Emp3 = {
-    employeeID : getEmpId(),
-    fullName : "Tamara Ayoub",
-    department : "Marketing",
-    level : "Senior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-var Emp4 = {
-    employeeID : getEmpId(),
-    fullName : "Safi Walid",
-    department : "Administration",
-    level : "Mid-Senior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-var Emp5 = {
-    employeeID : getEmpId(),
-    fullName : "Omar Zaid",
-    department : "Development",
-    level : "Senior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-var Emp5 = {
-    employeeID : getEmpId(),
-    fullName : "Rana Saleh",
-    department : "Development",
-    level : "Junior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-var Emp6 = {
-    employeeID : getEmpId(),
-    fullName : "Hadi Ahmad",
-    department : "Finance",
-    level : "Mid-Senior",
-    imageURL : "imageURL",
-    salary : calcuSalary(),
-    netSalary : function () {
-        return salary = this.salary - (this.salary * 0.075)
-    }
-};
-
-Emp1.salary = calcuSalary(Emp1.level);
-console.log("Employee name: " + Emp1.fullName)
-console.log("Employee salary: " + Emp1.salary)
-console.log("______________")
-Emp1.salary = calcuSalary(Emp2.level);
-console.log("Employee name: " + Emp2.fullName)
-console.log("Employee salary: " + (Emp2.salary = calcuSalary(Emp2.level)))
-console.log("______________")
-Emp1.salary = calcuSalary(Emp3.level);
-console.log("Employee name: " + Emp3.fullName)
-console.log("Employee salary: " + (Emp3.salary = calcuSalary(Emp3.level)))
-console.log("______________")
-Emp1.salary = calcuSalary(Emp4.level);
-console.log("Employee name: " + Emp4.fullName)
-console.log("Employee salary: " + (Emp4.salary = calcuSalary(Emp4.level)))
-console.log("______________")
-Emp1.salary = calcuSalary(Emp5.level);
-console.log("Employee name: " + Emp5.fullName)
-console.log("Employee salary: " + (Emp5.salary = calcuSalary(Emp5.level)))
-console.log("______________")
-Emp1.salary = calcuSalary(Emp6.level);
-console.log("Employee name: " + Emp6.fullName)
-console.log("Employee salary: " + (Emp6.salary = calcuSalary(Emp6.level)))
