@@ -2,7 +2,7 @@
 var id = 1000;
 
 var employeeList = [];
-function employee (emplyeeName, employeeDepartment, employeelevel, employeeImage){
+function Employee (emplyeeName, employeeDepartment, employeelevel, employeeImage){
     this.employeeid = function() {
         return id++;
     };
@@ -27,11 +27,11 @@ function employee (emplyeeName, employeeDepartment, employeelevel, employeeImage
     employeeList.push(this);
 };
 
-employee.prototype.netSalary = function(){
+Employee.prototype.netSalary = function(){
     return this.salary() - (this.salary() * 0.075)
 }
 
-employee.prototype.printInfo = function(){
+Employee.prototype.printInfo = function(){
     document.write(`<h5>Employee name: ${this.fullName} </h5><br>
     <h5>Department: ${this.department}</h5><br>
     <h5>Employee salary: ${this.salary()}</h5><br>
@@ -39,18 +39,18 @@ employee.prototype.printInfo = function(){
     
 }
 
-const emp1 = new employee("Ghazi Samer", "Administration","Senior",'./img/images (5).png')
+const emp1 = new Employee("Ghazi Samer", "Administration","Senior",'./')
 // console.log(emp1.employeeid())
 // console.log(emp1.salary())
 // console.log(emp1.netSalary())
-const emp2 = new employee("Lana Ali", "Finance", "Senior","imageURL")
+const emp2 = new Employee("Lana Ali", "Finance", "Senior","imageURL")
 // console.log(emp2.employeeid())
 // console.log(emp2.salary())
-const emp3 = new employee("Tamara Ayoub", "Marketing", "Senior","imageURL")
-const emp4 = new employee("Safi Walid", "Administration", "Mid-Senior","imageURL")
-const emp5 = new employee("Omar Zaid", "Development", "Senior","imageURL")
-const emp6 = new employee("Rana Saleh", "Development", "Junior","imageURL")
-const emp7 = new employee("Hadi Ahmad", "Finance", "Mid-Senior","imageURL")
+const emp3 = new Employee("Tamara Ayoub", "Marketing", "Senior","imageURL")
+const emp4 = new Employee("Safi Walid", "Administration", "Mid-Senior","imageURL")
+const emp5 = new Employee("Omar Zaid", "Development", "Senior","imageURL")
+const emp6 = new Employee("Rana Saleh", "Development", "Junior","imageURL")
+const emp7 = new Employee("Hadi Ahmad", "Finance", "Mid-Senior","imageURL")
 
 emp1.printInfo()
 emp2.printInfo()
