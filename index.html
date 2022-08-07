@@ -5,27 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employees</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
     <header>
-        <img src="./img/mg.png" alt="logo image" >
-        <li><a href="/index.html" >Home</a></li> 
-        <li><a href="./about.html">About MG Restaurant</a></li>
-                
-        <img src="./img/Screenshot 2022-08-02 011230.png" alt="welcome img">
-        <h1 id="welcome-text">welcome</h1>
+        <div class="header-logo" >
+            <img src="./img/mg.png" alt="logo image" >
+        </div>
+        <nav class="header-nav">
+            <a class="van-item" href="/index.html" >home</a>
+            <a class="van-item" href="./about.html">about us</a>
+            
+        </nav>
+        </div> 
+        
+        
     </header>
     
-    <main></main>
+    <main>
+        <section class="hero-slider-index">
+            <div class="hero-item">
+                <h4>landing page management</h4>
+                <h1>welcome to MG company</h1>
+                <p>go to employees information page <br> <a class="van-enter" href="./accounting.html">enter</a></p>
+                
+            </div>
+        </section>
+        
+        <!-- <img src="./img/Screenshot 2022-08-02 011230.png" alt="welcome img"> -->
+        
+    </main>
 
     <footer>
-        <p>FOLLOW US ON</p>
-        <a href="https://www.instagram.com/m_s_g.algzzawi/">Instagram</a>
-        <a href="https://www.linkedin.com/in/mohammad-alghzawi-1b0297232">linkedin</a>
-        <p>&copy; copyRights 2022</p>
+        <section class="footer-top">
+            <article>
+                <img src="./img/mg.png" alt="logo image" class="footer-logo">
+                <p>you can apply in MG company then you can see your information in this webside</p>
+            </article>
+            <article class="footer-links">
+                <h2>FOLLOW US ON</h2>
+                <a href="https://www.instagram.com/m_s_g.algzzawi/">Instagram</a>
+                <a href="https://www.linkedin.com/in/mohammad-alghzawi-1b0297232">linkedin</a>        
+            </article>
+        </section>
+        <section class="footer-bottom">
+            <p>&copy; copyRights alghzawi 2022</p>
+        </section>
     </footer>
 
-    <script src="./app.js"></script>
+<script src="./scroll-down.js"></script>
+    
 </body>
 </html>
