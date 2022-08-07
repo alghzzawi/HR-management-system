@@ -1,4 +1,5 @@
 ' use strict';
+
 var id = 1000;
 
 var employeeList = [];
@@ -39,24 +40,47 @@ Employee.prototype.printInfo = function(){
     
 }
 
-const emp1 = new Employee("Ghazi Samer", "Administration","Senior",'./')
+let emp1 = new Employee("Ghazi Samer", "Administration","Senior",'./empEmage/ghazi.jpg')
+
 // console.log(emp1.employeeid())
 // console.log(emp1.salary())
 // console.log(emp1.netSalary())
-const emp2 = new Employee("Lana Ali", "Finance", "Senior","imageURL")
+const emp2 = new Employee("Lana Ali", "Finance", "Senior",'./empEmage/lana.jpg')
 // console.log(emp2.employeeid())
 // console.log(emp2.salary())
-const emp3 = new Employee("Tamara Ayoub", "Marketing", "Senior","imageURL")
-const emp4 = new Employee("Safi Walid", "Administration", "Mid-Senior","imageURL")
-const emp5 = new Employee("Omar Zaid", "Development", "Senior","imageURL")
-const emp6 = new Employee("Rana Saleh", "Development", "Junior","imageURL")
-const emp7 = new Employee("Hadi Ahmad", "Finance", "Mid-Senior","imageURL")
+const emp3 = new Employee("Tamara Ayoub", "Marketing", "Senior",'./empEmage/tamara.jpg')
+const emp4 = new Employee("Safi Walid", "Administration", "Mid-Senior",'./empEmage/safi.jpg')
+const emp5 = new Employee("Omar Zaid", "Development", "Senior",'./empEmage/omar.jpg')
+const emp6 = new Employee("Rana Saleh", "Development", "Junior",'./empEmage/rana.jpg')
+const emp7 = new Employee("Hadi Ahmad", "Finance", "Mid-Senior",'./empEmage/hadi.jpg')
 
-emp1.printInfo()
-emp2.printInfo()
-emp3.printInfo()
-emp4.printInfo()
-emp5.printInfo()
-emp6.printInfo()
-emp7.printInfo()
+// emp1.printInfo()
+// emp2.printInfo()
+// emp3.printInfo()
+// emp4.printInfo()
+// emp5.printInfo()
+// emp6.printInfo()
+// emp7.printInfo()
 
+const divInfo = document.getElementById('divInfo')
+Employee.prototype.printData = function(){
+
+    const imgEmp = document.createElement('img')
+    imgEmp.src = this.employeeImage;
+    imgEmp.alt = this.fullName;
+    divInfo.appendChild(imgEmp)
+
+    const pEmp = document.createElement('p')
+    pEmp.textContent = `Name: ${this.fullName} - ID: ${this.employeeid()} - Deparatment: ${this.department} - Level: ${this.level} - ${this.netSalary()}`
+    divInfo.appendChild(pEmp)
+
+}
+
+
+emp1.printData()
+emp2.printData()
+emp3.printData()
+emp4.printData()
+emp5.printData()
+emp6.printData()
+emp7.printData()
