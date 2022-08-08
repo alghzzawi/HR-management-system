@@ -61,8 +61,6 @@ const divInfo = document.getElementById('divInfo')
 Employee.prototype.printData = function(){
 
     const div = document.createElement('div')
-    console.log(this.employeeImage)
-    console.log(this.fullName)
     let imgEmp = document.createElement('img')
     imgEmp.src = this.employeeImage;
     imgEmp.alt = this.fullName;
