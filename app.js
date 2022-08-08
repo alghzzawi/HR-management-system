@@ -40,15 +40,9 @@ Employee.prototype.printInfo = function(){
     
 }
 
-let emp1 = new Employee("Ghazi Samer", "Administration","Senior",'./empEmage/ghazi.jpg')
-
-// console.log(emp1.employeeid())
-// console.log(emp1.salary())
-// console.log(emp1.netSalary())
-const emp2 = new Employee("Lana Ali", "Finance", "Senior",'./empEmage/lana.jpg')
-// console.log(emp2.employeeid())
-// console.log(emp2.salary())
-const emp3 = new Employee("Tamara Ayoub", "Marketing", "Senior",'./empEmage/tamara.jpg')
+let emp1 = new Employee("Ghazi Samer", "Administration","Senior","https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.freepik.com%2Ffree-vector%2Fgroup-people-illustration-set_52683-33806.jpg%3Fw%3D2000&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Fvectors%2Fpeople-illustration&tbnid=TyVr2KLEbF_rZM&vet=12ahUKEwirhOjlkrf5AhVohc4BHaWqBh8QMygAegUIARCkAQ..i&docid=VuMP-z8couTF4M&w=2000&h=1333&q=people&ved=2ahUKEwirhOjlkrf5AhVohc4BHaWqBh8QMygAegUIARCkAQ")
+const emp2 = new Employee("Lana Ali", "Finance", "Senior",'./empimag/lana.jpg')
+const emp3 = new Employee("Tamara Ayoub", "Marketing", "Senior",'./empimag/tamara.jpg')
 const emp4 = new Employee("Safi Walid", "Administration", "Mid-Senior",'./empEmage/safi.jpg')
 const emp5 = new Employee("Omar Zaid", "Development", "Senior",'./empEmage/omar.jpg')
 const emp6 = new Employee("Rana Saleh", "Development", "Junior",'./empEmage/rana.jpg')
@@ -63,24 +57,29 @@ const emp7 = new Employee("Hadi Ahmad", "Finance", "Mid-Senior",'./empEmage/hadi
 // emp7.printInfo()
 
 const divInfo = document.getElementById('divInfo')
+
 Employee.prototype.printData = function(){
 
-    const imgEmp = document.createElement('img')
+    const div = document.createElement('div')
+    console.log(this.employeeImage)
+    console.log(this.fullName)
+    let imgEmp = document.createElement('img')
     imgEmp.src = this.employeeImage;
     imgEmp.alt = this.fullName;
-    divInfo.appendChild(imgEmp)
+    div.appendChild(imgEmp)
+
 
     const pEmp = document.createElement('p')
     pEmp.textContent = `Name: ${this.fullName} - ID: ${this.employeeid()} - Deparatment: ${this.department} - Level: ${this.level} - ${this.netSalary()}`
-    divInfo.appendChild(pEmp)
+    div.appendChild(pEmp)
+
+    divInfo.appendChild(div)
 
 }
 
+for (let index = 0; index < employeeList.length; index++) {
+    employeeList[index].printData()
+    
+}
 
-emp1.printData()
-emp2.printData()
-emp3.printData()
-emp4.printData()
-emp5.printData()
-emp6.printData()
-emp7.printData()
+
