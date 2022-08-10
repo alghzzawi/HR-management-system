@@ -58,7 +58,7 @@ a{
     background-blend-mode: color;
 }
 .hero-slider-accounting{
-    height: 200vh;
+    height: 100%;
     width: 100%;
     background: url(https://images.unsplash.com/photo-1653149030110-bec7c89bcd93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80), rgba(0,0,0,0.7);
     color: #E7F6F2;
@@ -68,6 +68,16 @@ a{
     justify-content: center;
     background-blend-mode: color;
 }
+
+.hero-item-accounting div{
+    margin-top: 40%;
+}
+
+.hero-item-accounting img{
+    width: 200px;
+    height: 200px;
+}
+
 
 
 .hero-item{
